@@ -1,0 +1,34 @@
+library(sleuth)
+library(splines)
+
+days = read.table('./days.txt',stringsAsFactors=FALSE)
+paths = read.table('./paths.txt',stringsAsFactors=FALSE)
+samples = read.table('./samples.txt',stringsAsFactors=FALSE)
+
+print(paths)
+
+s2c = days
+s2c$sample = samples$V1
+s2c$path = paths$V1
+names(s2c) = c("day","sample","path")
+
+print(s2c)
+
+day = s2c$day
+full_design = model.matrix(formula(~ ns(day, df=4)))
+
+print(full_design)
+
+sa = sleuth_prep(s2c,full_model = full_design)
+sb = sleuth_fit(sa)
+sc = sleuth_fit(sb, formula = ~ 1, fit_name = "reduced")
+sd = sleuth_lrt(sc,"reduced","full")
+
+lrt_results = sleuth_results(sd,'reduced:full', test_type = 'lrt')
+
+write.table(lrt_results,file = "lrt_results_full.tsv")
+
+gene_expression = kallisto_table(sa)
+
+write.table(gene_expression, file = "gene_expression.tsv")
+
