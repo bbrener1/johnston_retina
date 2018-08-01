@@ -14,15 +14,15 @@ days=$(days.txt)
 index="gencode_transcript_index.kallisto"
 bootstraps=100
 
-outdir="../quantification/"
+outdir=$1
 
 for i in $(seq 1 ${#ArrayName[@]});
 do
 	indir=sample_paths[$i]
 	sample=samples[$i]
 	echo $sample
-	if [ ! -d outdir/$sample ]; then
-		mkdir outdir/$sample
+	if [ ! -d $outdir/$sample ]; then
+		mkdir $outdir/$sample
 #		mkdir outdir/$sample/qc
 #		time fastqc --outdir outdir/$sample/qc sample_paths[$i]
 
@@ -30,5 +30,12 @@ do
 	fi
 done
 
+RScript ./sleuth_script.Rscript
+
+mkdir $outdir/arrays/
+
+python ./translate_gene_exp_bootstrapped.py ${#ArrayName[@]} $outdir/arrays/
+
+python ./collapse_matries $outdir/arrays/day_header.txt $outdir/arrays/gene_expression_array.txt $outdir/arrays/transcript_expression_array.txt
 
 # for i in $(find ~/data/bbrener1/johnston_retina/raw_data/*.fastq -exec basename {} \; | tail -n 22);
