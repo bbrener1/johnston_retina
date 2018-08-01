@@ -8,13 +8,13 @@
 
 source activate ./johnston_retina
 
-samples=$(cat samples.txt)
-sample_paths=$(cat sample_paths.txt)
-days=$(days.txt)
+samples=$(cat $1)
+days=$(cat $2)
+sample_paths=$(cat $3)
 index="gencode_transcript_index.kallisto"
 bootstraps=100
 
-outdir=$1
+outdir=$4
 
 for i in $(seq 1 ${#ArrayName[@]});
 do
