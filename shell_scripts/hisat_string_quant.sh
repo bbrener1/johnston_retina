@@ -13,8 +13,8 @@ samtools view -bS $2/$1.sam > $2/$1.bam
 samtools view -bS $2/$1.filtered.sam > $2/$1.filtered.bam
 samtools sort $2/$1.bam -o $2/$1.sorted.bam
 samtools sort $2/$1.filtered.bam -o $2/$1.filtered.sorted.bam
-stringtie -G gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
-stringtie -G gencode.v27.annotation.gtf -A $2/$1.filtered.abundance.tsv $2/$1.filtered.sorted.bam
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.filtered.abundance.tsv $2/$1.filtered.sorted.bam
 
 echo "Unfiltered:" > $2/$1.filter_compare.txt
 cat $2/$1.abundance.tsv | grep OPN1LW >> $2/$1.filter_compare.txt

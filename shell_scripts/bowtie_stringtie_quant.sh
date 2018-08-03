@@ -14,8 +14,8 @@ samtools view -bS $2/$1.strict.sam > $2/$1.strict.bam
 samtools view -bS $2/$1.sam > $2/$1.bam
 samtools sort $2/$1.strict.bam -o $2/$1.strict.sorted.bam
 samtools sort $2/$1.bam -o $2/$1.sorted.bam
-stringtie -G gencode.v27.annotation.gtf -A $2/$1.strict.abundance.tsv $2/$1.strict.sorted.bam
-stringtie -G gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.strict.abundance.tsv $2/$1.strict.sorted.bam
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
 
 echo "Strict" > $2/$1.cmp_align_penalty.txt
 cat $2/$1.strict.abundance.tsv | grep OPN1LW >> $2/$1.cmp_align_penalty.txt
