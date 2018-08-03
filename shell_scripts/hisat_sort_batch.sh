@@ -6,7 +6,7 @@
 #SBATCH -t 500
 #SBATCH -o slurm_job_out2.txt
 
-source activate ./johnston_retina
+source activate ../johnston_retina
 
 
 for i in $(ls ~/scratch/johnston_retina/quantification/hisat/*.sorted.bam);

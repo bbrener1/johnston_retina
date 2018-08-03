@@ -4,7 +4,7 @@
 for i in $(find ~/data/bbrener1/johnston_retina/raw_data/*.fastq -exec basename {} \;);
 do
 	if [ ! -d ../quantification/hisat_stringtie/$i ]; then
-		mkdir ../quantification/hisat_stringtie/$i
+		# mkdir ../quantification/hisat_stringtie/$i
 		# mkdir ./quantification/hisat/$i/qc
 		# time fastqc --outdir ./quantification/hisat/$i/qc ./raw_data/$i
 
