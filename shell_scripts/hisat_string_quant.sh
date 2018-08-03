@@ -7,7 +7,7 @@
 
 source activate ../johnston_retina
 
-hisat2 -q --dta -x human_index/hg38/genome -p 21 -U $3/$1 > $2/$1.sam
+hisat2 -q --dta -x ../human_aligner_index/hg38/genome -p 21 -U $3/$1 > $2/$1.sam
 cat $2/$1.sam | grep -P "\@|NH:i:1" > $2/$1.filtered.sam
 samtools view -bS $2/$1.sam > $2/$1.bam
 samtools view -bS $2/$1.filtered.sam > $2/$1.filtered.bam
