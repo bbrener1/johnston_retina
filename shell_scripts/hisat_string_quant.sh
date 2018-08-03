@@ -4,7 +4,6 @@
 #SBATCH --ntasks-per-node=24
 #SBATCH --mem-per-cpu=5G
 #SBATCH -t 500
-#SBATCH -o slurm_job_out2.txt
 
 source activate ../johnston_retina
 
@@ -17,11 +16,11 @@ samtools sort $2/$1.filtered.bam -o $2/$1.filtered.sorted.bam
 stringtie -G gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
 stringtie -G gencode.v27.annotation.gtf -A $2/$1.filtered.abundance.tsv $2/$1.filtered.sorted.bam
 
-echo "Unfiltered:" > filter_compare.txt
-cat $2/$1.abundance.tsv | grep OPN1LW >> filter_compare.txt
-cat $2/$1.abundance.tsv | grep OPN1MW >> filter_compare.txt
-echo "Filtered:" >> filter_compare.txt
-cat $2/$1.filtered.abundance.tsv | grep OPN1LW >> filter_compare.txt
-cat $2/$1.filtered.abundance.tsv | grep OPN1MW >> filter_compare.txt
+echo "Unfiltered:" > $2/$1.filter_compare.txt
+cat $2/$1.abundance.tsv | grep OPN1LW >> $2/$1.filter_compare.txt
+cat $2/$1.abundance.tsv | grep OPN1MW >> $2/$1.filter_compare.txt
+echo "Filtered:" >> $2/$1.filter_compare.txt
+cat $2/$1.filtered.abundance.tsv | grep OPN1LW >> $2/$1.filter_compare.txt
+cat $2/$1.filtered.abundance.tsv | grep OPN1MW >> $2/$1.filter_compare.txt
 
 # bedtools genomecov -split -ibam $2/$1.sorted.bam -g human_index/hg38.chrom.sizes -bg > $2/$1.bedGraph

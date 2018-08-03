@@ -17,12 +17,12 @@ samtools sort $2/$1.bam -o $2/$1.sorted.bam
 stringtie -G gencode.v27.annotation.gtf -A $2/$1.strict.abundance.tsv $2/$1.strict.sorted.bam
 stringtie -G gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
 
-echo "Strict" > cmp_align_penalty.txt
-cat $2/$1.strict.abundance.tsv | grep OPN1LW >> cmp_align_penalty.txt
-cat $2/$1.strict.abundance.tsv | grep OPN1MW >> cmp_align_penalty.txt
-echo "Permissive" >> cmp_align_penalty.txt
-cat $2/$1.abundance.tsv | grep OPN1LW >> cmp_align_penalty.txt
-cat $2/$1.abundance.tsv | grep OPN1MW >> cmp_align_penalty.txt
+echo "Strict" > $2/$1.cmp_align_penalty.txt
+cat $2/$1.strict.abundance.tsv | grep OPN1LW >> $2/$1.cmp_align_penalty.txt
+cat $2/$1.strict.abundance.tsv | grep OPN1MW >> $2/$1.cmp_align_penalty.txt
+echo "Permissive" >> $2/$1.cmp_align_penalty.txt
+cat $2/$1.abundance.tsv | grep OPN1LW >> $2/$1.cmp_align_penalty.txt
+cat $2/$1.abundance.tsv | grep OPN1MW >> $2/$1.cmp_align_penalty.txt
 
 # bedtools genomecov -split -ibam $2/$1.sorted.bam -g human_index/hg38.chrom.sizes -bg > $2/$1.bedGraph
 # LC_COLLATE=C sort -k1,1 -k2,2n $2/$1.bedGraph > $2/$1.sorted.bedGraph

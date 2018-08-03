@@ -4,7 +4,6 @@
 #SBATCH --ntasks-per-node=24
 #SBATCH --mem-per-cpu=5G
 #SBATCH -t 500
-#SBATCH -o slurm_job_out2.txt
 
 source activate ../johnston_retina
 
