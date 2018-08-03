@@ -1,9 +1,9 @@
 library(sleuth)
 library(splines)
 
-days = read.table('./days.txt',stringsAsFactors=FALSE)
-paths = read.table('./sample_paths.txt',stringsAsFactors=FALSE)
-samples = read.table('./samples.txt',stringsAsFactors=FALSE)
+days = read.table('../sample_spec/days.txt',stringsAsFactors=FALSE)
+paths = read.table('../sample_spec/sample_paths.txt',stringsAsFactors=FALSE)
+samples = read.table('../sample_spec/samples.txt',stringsAsFactors=FALSE)
 
 print(paths)
 
@@ -26,8 +26,8 @@ sd = sleuth_lrt(sc,"reduced","full")
 
 lrt_results = sleuth_results(sd,'reduced:full', test_type = 'lrt')
 
-write.table(lrt_results,file = "lrt_results_full.tsv")
+write.table(lrt_results,file = "../expression_array/lrt_results_full.tsv")
 
 gene_expression = kallisto_table(sa)
 
-write.table(gene_expression, file = "gene_expression.tsv")
+write.table(gene_expression, file = "../expression_array/gene_expression.tsv")
