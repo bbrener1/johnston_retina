@@ -1,20 +1,24 @@
 # johnston_retina
 
-SEQUENCE OF COMMANDS:
+Under shell scripts, 
 
-(certain boilerplate omitted) 
+./bowtie_stringtie_quant.sh 
+./hisat_string_quant.sh
+./kallisto_quant.sh
 
-bash batch_run9.sh
+All are slurm jobs that take the sample file name as argument 1, the output directory as argument 2, and the raw data directory as argument 3.
 
-bash process_samples.sh
+They are currently set up to do comparison testing as follows:
 
-Rscript sleuth_script.Rscript
+Bowtie compares the performance of stringtie quantification when high penalties for mismatch are used vs not
 
-python translate_gene_expression_bootstrapped.py gene_expression.tsv 37
+Hisat currently compares performance when multiply-aligned reads are filtered vs not filtered
 
-python collapse_matrices.py day_header.txt gene_expression_array.txt transcript_expression_array.txt 
+Kallisto is currently comparing the performance of various kmer settings for indecies
 
-bash hisat_batch1.sh
+batch_process_comparison is set up to put the output of all scripts under ../quantification/comparison
 
-bash hisat_sort_batch.sh
+Certain quick data is available in .txt files under each directory.
+
+The python scripts are mainly set up to process sleuth output and manicure it into good shape.
 
