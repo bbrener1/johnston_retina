@@ -1,0 +1,6 @@
+/home-1/bbrener1@jhu.edu/data/bbrener1/johnston_retina/weri_raw/Keld-Control_1_S9_R1_001.fastq
+/home-1/bbrener1@jhu.edu/data/bbrener1/johnston_retina/weri_raw/Keld-Control_2_S10_R1_001.fastq
+/home-1/bbrener1@jhu.edu/data/bbrener1/johnston_retina/weri_raw/Keld-T3-Treated_1_S11_R1_001.fastq
+/home-1/bbrener1@jhu.edu/data/bbrener1/johnston_retina/weri_raw/Keld-T3-Treated_2_S12_R1_001.fastq
+/home-1/bbrener1@jhu.edu/data/bbrener1/johnston_retina/weri_raw/KEld-Weri_T3_S8_R1_001.fastq
+/home-1/bbrener1@jhu.edu/data/bbrener1/johnston_retina/weri_raw/KEld-Weri_Untreated_S7_R1_001.fastq

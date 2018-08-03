@@ -1,0 +1,60 @@
+36140689 reads; of these:
+  36140689 (100.00%) were unpaired; of these:
+    1416719 (3.92%) aligned 0 times
+    34723970 (96.08%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+96.08% overall alignment rate
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+32912758 reads; of these:
+  32912758 (100.00%) were unpaired; of these:
+    1267114 (3.85%) aligned 0 times
+    31645644 (96.15%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+96.15% overall alignment rate
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+33034342 reads; of these:
+  33034342 (100.00%) were unpaired; of these:
+    1280576 (3.88%) aligned 0 times
+    31753766 (96.12%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+96.12% overall alignment rate
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+33967115 reads; of these:
+  33967115 (100.00%) were unpaired; of these:
+    1262868 (3.72%) aligned 0 times
+    32704247 (96.28%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+96.28% overall alignment rate
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+64569068 reads; of these:
+  64569068 (100.00%) were unpaired; of these:
+    2357202 (3.65%) aligned 0 times
+    62211866 (96.35%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+96.35% overall alignment rate
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+50582852 reads; of these:
+  50582852 (100.00%) were unpaired; of these:
+    1974037 (3.90%) aligned 0 times
+    48608815 (96.10%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+96.10% overall alignment rate
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****

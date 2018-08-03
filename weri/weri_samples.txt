@@ -1,0 +1,6 @@
+Keld-Control_1_S9_R1_001
+Keld-Control_2_S10_R1_001
+Keld-T3-Treated_1_S11_R1_001
+Keld-T3-Treated_2_S12_R1_001
+KEld-Weri_T3_S8_R1_001
+KEld-Weri_Untreated_S7_R1_001

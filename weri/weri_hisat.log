@@ -1,0 +1,66 @@
+36140689 reads; of these:
+  36140689 (100.00%) were unpaired; of these:
+    864270 (2.39%) aligned 0 times
+    31856360 (88.15%) aligned exactly 1 time
+    3420059 (9.46%) aligned >1 times
+97.61% overall alignment rate
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+32912758 reads; of these:
+  32912758 (100.00%) were unpaired; of these:
+    825134 (2.51%) aligned 0 times
+    29059516 (88.29%) aligned exactly 1 time
+    3028108 (9.20%) aligned >1 times
+97.49% overall alignment rate
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+33034342 reads; of these:
+  33034342 (100.00%) were unpaired; of these:
+    762310 (2.31%) aligned 0 times
+    29006448 (87.81%) aligned exactly 1 time
+    3265584 (9.89%) aligned >1 times
+97.69% overall alignment rate
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+33967115 reads; of these:
+  33967115 (100.00%) were unpaired; of these:
+    824308 (2.43%) aligned 0 times
+    30072697 (88.53%) aligned exactly 1 time
+    3070110 (9.04%) aligned >1 times
+97.57% overall alignment rate
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+64569068 reads; of these:
+  64569068 (100.00%) were unpaired; of these:
+    1586258 (2.46%) aligned 0 times
+    57207259 (88.60%) aligned exactly 1 time
+    5775551 (8.94%) aligned >1 times
+97.54% overall alignment rate
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
+50582852 reads; of these:
+  50582852 (100.00%) were unpaired; of these:
+    1207864 (2.39%) aligned 0 times
+    44534513 (88.04%) aligned exactly 1 time
+    4840475 (9.57%) aligned >1 times
+97.61% overall alignment rate
+[bam_sort_core] merging from 15 files and 1 in-memory blocks...
+
+*****
+*****WARNING: Genome (-g) files are ignored when BAM input is provided. 
+*****
