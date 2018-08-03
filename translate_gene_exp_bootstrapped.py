@@ -13,6 +13,8 @@ day_sample_mapping = {}
 
 input_file = open(sys.argv[1])
 
+output_directory = sys.argv[3]
+
 for i,line in enumerate(input_file):
     if i == 0:
         continue
@@ -49,22 +51,21 @@ day_header = day_header[day_indecies]
 # print day_header
 sample_header = np.array(sample_header)
 sample_header = sample_header[day_indecies]
-np.savetxt("day_header.txt",day_header,fmt="%s")
-np.savetxt("sample_header.txt",sample_header,fmt="%s")
+np.savetxt(prefix+"day_header.txt",day_header,fmt="%s")
+np.savetxt(prefix+"sample_header.txt",sample_header,fmt="%s")
 
 transcript_expression_array = np.array(targets).T[day_indecies].T
-np.savetxt("transcript_expression_array.txt", transcript_expression_array)
+np.savetxt(prefix+"transcript_expression_array.txt", transcript_expression_array)
 
 transcript_id_list = [""]*len(target_dictionary)
 for transcript in target_dictionary:
     transcript_id_list[target_dictionary[transcript]] = transcript
-np.savetxt("transcript_id_array.txt",np.array(transcript_id_list),fmt="%s")
+np.savetxt(prefix+"transcript_id_array.txt",np.array(transcript_id_list),fmt="%s")
 
 gene_expression_array = np.array(genes).T[day_indecies].T
-np.savetxt("gene_expression_array.txt",gene_expression_array)
+np.savetxt(prefix+"gene_expression_array.txt",gene_expression_array)
 
 gene_id_list = [""]*len(gene_dictionary)
 for gene in gene_dictionary:
     gene_id_list[gene_dictionary[gene]] = gene
-np.savetxt("gene_id_array.txt",np.array(gene_id_list),fmt="%s")
-
+np.savetxt(prefix+"gene_id_array.txt",np.array(gene_id_list),fmt="%s")

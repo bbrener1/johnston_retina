@@ -37,4 +37,3 @@ sns_obj.savefig("%s_clustered_genes.png" % name)
 
 np.savetxt("%s_clustered_genes.txt" % name,important_subarray[sns_obj.dendrogram_row.reordered_ind])
 np.savetxt("%s_clustered_gene_ids.txt" % name,new_gene_ids,fmt="%s")
-

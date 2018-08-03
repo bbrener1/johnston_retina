@@ -2,7 +2,7 @@ library(sleuth)
 library(splines)
 
 days = read.table('./days.txt',stringsAsFactors=FALSE)
-paths = read.table('./paths.txt',stringsAsFactors=FALSE)
+paths = read.table('./sample_paths.txt',stringsAsFactors=FALSE)
 samples = read.table('./samples.txt',stringsAsFactors=FALSE)
 
 print(paths)
@@ -31,4 +31,3 @@ write.table(lrt_results,file = "lrt_results_full.tsv")
 gene_expression = kallisto_table(sa)
 
 write.table(gene_expression, file = "gene_expression.tsv")
-
