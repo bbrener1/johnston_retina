@@ -15,7 +15,7 @@
 #
 # done
 
-i=$(find ~/data/bbrener1/johnston_retina/raw_data/*.fastq -exec basename {} \; | head -n $SLURM_ARRAY_TASK_ID | tail -n 1)
+i=$(find ~/data/bbrener1/johnston_retina/raw_data/*.fastq -printf '%f\n' | head -n $SLURM_ARRAY_TASK_ID | tail -n 1)
 
 bash hisat_string_quant.sh $i ../quantification/comparison/hisat ~/data/bbrener1/johnston_retina/raw_data/;
 bash kallisto_quant.sh $i ../quantification/comparison/kallisto ~/data/bbrener1/johnston_retina/raw_data/;
