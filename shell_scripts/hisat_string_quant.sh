@@ -7,14 +7,14 @@
 
 source activate ../johnston_retina
 
-hisat2 -q --dta -x ../human_aligner_index/hg38/genome -p 21 -U $3/$1 > $2/$1.sam
+hisat2 -q --dta -x ../hisat_index/hg38/genome -p 21 -U $3/$1 > $2/$1.sam
 cat $2/$1.sam | grep -P "\@|NH:i:1" > $2/$1.filtered.sam
 samtools view -bS $2/$1.sam > $2/$1.bam
 samtools view -bS $2/$1.filtered.sam > $2/$1.filtered.bam
 samtools sort $2/$1.bam -o $2/$1.sorted.bam
 samtools sort $2/$1.filtered.bam -o $2/$1.filtered.sorted.bam
-stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
-stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.filtered.abundance.tsv $2/$1.filtered.sorted.bam
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam > $2/$1.gtf
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.filtered.abundance.tsv $2/$1.filtered.sorted.bam >  > $2/$1.filtered.gtf
 
 echo "Unfiltered:" > $2/$1.filter_compare.txt
 cat $2/$1.abundance.tsv | grep OPN1LW >> $2/$1.filter_compare.txt

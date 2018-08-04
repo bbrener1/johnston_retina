@@ -8,14 +8,14 @@
 
 source activate ../johnston_retina
 
-bowtie2 -mp 9999,9999 -x ../human_aligner_index/human_index/hg38/genome -p 21 -U $3/$1 > $2/$1.strict.sam
-bowtie2 -mp -x ../human_aligner_index/human_index/hg38/genome -p 21 -U $3/$1 > $2/$1.sam
+bowtie2 -mp 9999,9999 -x ../bowtie_index/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.1.bt2 -p 21 -U $3/$1 > $2/$1.strict.sam
+bowtie2 -x ../human_aligner_index/bowtie_index/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.1.bt2 -p 21 -U $3/$1 > $2/$1.sam
 samtools view -bS $2/$1.strict.sam > $2/$1.strict.bam
 samtools view -bS $2/$1.sam > $2/$1.bam
 samtools sort $2/$1.strict.bam -o $2/$1.strict.sorted.bam
 samtools sort $2/$1.bam -o $2/$1.sorted.bam
-stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.strict.abundance.tsv $2/$1.strict.sorted.bam
-stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.strict.abundance.tsv $2/$1.strict.sorted.bam > $2/$1.strict.gtf
+stringtie -G ../gencode_transcriptome/gencode.v27.annotation.gtf -A $2/$1.abundance.tsv $2/$1.sorted.bam > $2/$1.gtf
 
 echo "Strict" > $2/$1.cmp_align_penalty.txt
 cat $2/$1.strict.abundance.tsv | grep OPN1LW >> $2/$1.cmp_align_penalty.txt
