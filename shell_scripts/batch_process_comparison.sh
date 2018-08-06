@@ -21,7 +21,7 @@ i=$(find ~/data/bbrener1/johnston_retina/raw_data/*.fastq -printf '%f\n' | head 
 # bash kallisto_quant.sh $i ../../quantification/comparison/kallisto ~/data/bbrener1/johnston_retina/raw_data/;
 # bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie ~/data/bbrener1/johnston_retina/raw_data/;
 # bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie_transcriptome ~/data/bbrener1/johnston_retina/raw_data/;
-bash pileup.sh $i ../../quantification/comparison/hisat;
+bash pileup.sh $i ../../quantification/comparison/bowtie;
 
 # 	if [ ! -d ../quantification/comparison/$i ]; then
 # 	fi
