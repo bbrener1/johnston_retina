@@ -6,22 +6,23 @@
 #SBATCH --mem-per-cpu=5G
 #SBATCH -t 500
 
-# for i in $(find ~/data/bbrener1/johnston_retina/raw_data/*.fastq -exec basename {} \;);
-# do
-#
-#   bash hisat_string_quant.sh $i ../quantification/comparison/hisat ~/data/bbrener1/johnston_retina/raw_data/;
-#   bash kallisto_quant.sh $i ../quantification/comparison/kallisto ~/data/bbrener1/johnston_retina/raw_data/;
-#   bash bowtie_stringtie_quant.sh $i ../quantification/comparison/bowtie ~/data/bbrener1/johnston_retina/raw_data/;
-#
-# done
+for i in $(find ../../raw_data/raw_data/*.fastq -exec basename {} \;);
+do
 
-i=$(find ~/data/bbrener1/johnston_retina/raw_data/*.fastq -printf '%f\n' | head -n $SLURM_ARRAY_TASK_ID | tail -n 1)
+  bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ../../raw_data/;
+  bash kallisto_quant.sh $i ../quantification/comparison/kallisto ../../raw_data/;
+  bash bowtie_stringtie_quant.sh $i ../quantification/comparison/bowtie ../../raw_data/;
+  bash bowtie_stringtie_transcriptome_quant.sh $i ../quantification/comparison/bowtie_transcriptome/;
 
-bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ~/data/bbrener1/johnston_retina/raw_data/;
-# bash kallisto_quant.sh $i ../../quantification/comparison/kallisto ~/data/bbrener1/johnston_retina/raw_data/;
-# bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie ~/data/bbrener1/johnston_retina/raw_data/;
-# bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie_transcriptome ~/data/bbrener1/johnston_retina/raw_data/;
-bash pileup.sh $i ../../quantification/comparison/hisat;
+done
+
+
+# i=$(find ../../raw_data/*.fastq -printf '%f\n' | head -n $SLURM_ARRAY_TASK_ID | tail -n 1)
+#
+# bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ../../raw_data/;
+# # bash kallisto_quant.sh $i ../../quantification/comparison/kallisto ../../raw_data/;
+# # bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie ../../raw_data/;
+# # bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie_transcriptome ../../raw_data/;
 
 # 	if [ ! -d ../quantification/comparison/$i ]; then
 # 	fi

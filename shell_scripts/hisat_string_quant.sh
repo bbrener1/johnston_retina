@@ -23,4 +23,6 @@ echo "Filtered:" >> $2/$1.filter_compare.txt
 cat $2/$1.filtered.abundance.tsv | grep OPN1LW >> $2/$1.filter_compare.txt
 cat $2/$1.filtered.abundance.tsv | grep OPN1MW >> $2/$1.filter_compare.txt
 
+bash pileup.sh $1 $2
+
 # bedtools genomecov -split -ibam $2/$1.sorted.bam -g human_index/hg38.chrom.sizes -bg > $2/$1.bedGraph
