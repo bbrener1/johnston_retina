@@ -7,4 +7,5 @@
 
 source activate ../johnston_retina
 
-samtools mpileup -l ../unique_loci.txt -f ../hisat_index/GRCh38.primary_assembly $2/$1.sam > $2/$1.pile
+samtools mpileup -l ../unique_lw.txt -f ../hisat_index/GRCh38.primary_assembly $2/$1.sam > $2/$1.pile
+samtools mpileup -l ../unique_mw_ex5.txt -f ../hisat_index/GRCh38.primary_assembly $2/$1.sam >> $2/$1.pile
