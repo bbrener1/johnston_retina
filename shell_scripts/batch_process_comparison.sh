@@ -12,7 +12,7 @@ do
   # bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ../../raw_data/raw_data/;
   # bash kallisto_quant.sh $i ../../quantification/comparison/kallisto ../../raw_data/raw_data/;
   # bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie ../../raw_data/raw_data/;
-  bash bowtie_stringtie_transcriptome_quant.sh $i ../../quantification/comparison/bowtie_transcriptome/;
+  bash bowtie_stringtie_transcriptome_quant.sh $i ../../quantification/comparison/bowtie_transcriptome/ ../../raw_data/raw_data/;
 
 done
 
