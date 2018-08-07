@@ -9,9 +9,9 @@
 for i in $(find ../../raw_data/raw_data/*.fastq -exec basename {} \;);
 do
 
-  bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ../../raw_data/;
-  bash kallisto_quant.sh $i ../quantification/comparison/kallisto ../../raw_data/;
-  bash bowtie_stringtie_quant.sh $i ../quantification/comparison/bowtie ../../raw_data/;
+  bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ../../raw_data/raw_data/;
+  bash kallisto_quant.sh $i ../quantification/comparison/kallisto ../../raw_data/raw_data/;
+  bash bowtie_stringtie_quant.sh $i ../quantification/comparison/bowtie ../../raw_data/raw_data/;
   bash bowtie_stringtie_transcriptome_quant.sh $i ../quantification/comparison/bowtie_transcriptome/;
 
 done
