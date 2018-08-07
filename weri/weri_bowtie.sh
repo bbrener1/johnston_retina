@@ -8,7 +8,7 @@
 
 for i in $(find ../../raw_data/weri/*.fastq -exec basename {} \;);
 do
-  bash ../shell_scripts/bowtie_stringtie_transcriptome_quant.sh $i ../../quantification/weri/bowtie_transcriptome ../../raw_data/weri/;
+  # bash ../shell_scripts/bowtie_stringtie_transcriptome_quant.sh $i ../../quantification/weri/bowtie_transcriptome ../../raw_data/weri/;
   bash ../shell_scripts/transcriptome_pileup.sh $i ../../quantification/weri/bowtie_transcriptome/;
 done
 
