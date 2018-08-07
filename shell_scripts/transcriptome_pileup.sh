@@ -7,5 +7,5 @@
 
 source activate ../johnston_retina
 
-samtools mpileup -l ../unique_lw_transcript.txt -f ../gencode_transcriptome/gencode.v27.transcripts.fa $2/$1.sam > $2/$1.pile
-samtools mpileup -l ../unique_mw_transcript.txt -f ../gencode_transcriptome/gencode.v27.transcripts.fa $2/$1.sam >> $2/$1.pile
+samtools mpileup -l ../unique_lw_transcript.txt -f ../gencode_transcriptome/gencode.v27.transcripts.fa $2/$1.sorted.bam > $2/$1.pile
+samtools mpileup -l ../unique_mw_transcript.txt -f ../gencode_transcriptome/gencode.v27.transcripts.fa $2/$1.sorted.bam >> $2/$1.pile
