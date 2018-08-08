@@ -55,3 +55,4 @@ print quantification_array
 np.savetxt("quantities.txt",quantification_array)
 np.savetxt("positions.txt", position_header,fmt="%s")
 np.savetxt("lw_mw_header.txt", lw_mw_header,fmt="%s")
+np.savetxt("sample_header.txt", np.array(samples),fmt="%s")
