@@ -63,4 +63,5 @@ np.savetxt("sample_header.txt", np.array(samples),fmt="%s")
 day_sort = np.argsort(np.array(days))
 
 np.savetxt("quantities_sorted.txt", quantification_array.T[day_sort].T)
-np.savetxt("sample_header", np.array(samples)[day_sort],fmt="%s")
+np.savetxt("sample_header_sorted.txt", np.array(samples)[day_sort],fmt="%s")
+np.savetxt("day_header_sorted.txt", np.array(days)[day_sort],fmt="%s")
