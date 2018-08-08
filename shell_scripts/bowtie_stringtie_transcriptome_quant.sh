@@ -15,4 +15,4 @@ samtools view -bS $2/$1.sam > $2/$1.bam
 samtools sort $2/$1.strict.bam -o $2/$1.strict.sorted.bam
 samtools sort $2/$1.bam -o $2/$1.sorted.bam
 
-bash ./transcriptome_pileup $1 $2
+bash ./transcriptome_pileup.sh $1 $2
