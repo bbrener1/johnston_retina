@@ -36,7 +36,7 @@ quantification_array = np.zeros((len(position_index_dictionary),len(samples)))
 
 print position_header
 print position_index_dictionary
-print lw_mw_index
+print lw_mw_header
 
 
 for sample,day,path in zip(samples,days,paths):
