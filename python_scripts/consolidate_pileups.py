@@ -17,4 +17,4 @@ set_days = set(days)
 
 for sample,day,path in zip(samples,days,paths):
     print str((sample,day,path))
-    sample_pile = open(path)
+    sample_pile = open(path.strip())
