@@ -51,6 +51,9 @@ for sample,day,path in zip(samples,days,paths):
 
 print quantification_array
 
+print quantification_array.shape
+print len(samples)
+print len(sample_index_dictionary)
 
 np.savetxt("quantities.txt",quantification_array)
 np.savetxt("positions.txt", position_header,fmt="%s")
