@@ -59,3 +59,8 @@ np.savetxt("quantities.txt",quantification_array)
 np.savetxt("positions.txt", position_header,fmt="%s")
 np.savetxt("lw_mw_header.txt", lw_mw_header,fmt="%s")
 np.savetxt("sample_header.txt", np.array(samples),fmt="%s")
+
+day_sort = np.argsort(np.array(days))
+
+np.savetxt("quantities_sorted.txt", quantification_array.T[day_sort].T)
+np.savetxt("sample_header", np.array(samples)[day_sort],fmt="%s")
