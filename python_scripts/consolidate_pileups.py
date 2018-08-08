@@ -29,7 +29,7 @@ lw_mw_header = []
 for i,position in enumerate(lw_positions + mw_positions):
     position_header.append(position[1])
     position_index_dictionary[(position[0],position[1])] = i
-    lw_mw_index.append(position[0].split("|")[5])
+    lw_mw_header.append(position[0].split("|")[5])
 
 
 quantification_array = np.zeros((len(position_index_dictionary),len(samples)))
