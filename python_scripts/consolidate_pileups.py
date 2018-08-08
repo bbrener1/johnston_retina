@@ -6,8 +6,8 @@ samples = open(sys.argv[1]).readlines()
 days = open(sys.argv[2]).readlines()
 paths = open(sys.argv[3]).readlines()
 
-lw_positions = map(lambda x: x.split()[0],open(sys.argv[4]).readlines()))
-mw_positions = map(lambda x: x.split()[0],open(sys.argv[4]).readlines()))
+lw_positions = map(lambda x: x.split()[0],open(sys.argv[4]).readlines())
+mw_positions = map(lambda x: x.split()[0],open(sys.argv[4]).readlines())
 
 print lw_positions
 print mw_positions
