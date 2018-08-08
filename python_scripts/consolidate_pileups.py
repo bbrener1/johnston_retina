@@ -42,7 +42,7 @@ print lw_mw_header
 for sample,day,path in zip(samples,days,paths):
     print str((sample,day,path))
     sample_pile = open(path)
-    for line in path:
+    for line in sample_pile:
         print line.split()
         gene,position,reference,count,match_code,quality = line.split()
         quantification_array[position_index_dictionary[gene,position],sample_index_dictionary[sample]] = count
