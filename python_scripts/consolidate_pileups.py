@@ -17,7 +17,7 @@ sample_index_dictionary = {x:y for (x,y) in zip(samples,range(len(samples)))}
 print sample_day_map
 
 lw_positions = map(lambda x: x.split(),open(sys.argv[4]).readlines())
-mw_positions = map(lambda x: x.split(),open(sys.argv[4]).readlines())
+mw_positions = map(lambda x: x.split(),open(sys.argv[5]).readlines())
 
 print lw_positions
 print mw_positions
@@ -43,6 +43,7 @@ for sample,day,path in zip(samples,days,paths):
     print str((sample,day,path))
     sample_pile = open(path)
     for line in path:
+        print line.split()
         gene,position,reference,count,match_code,quality = line.split()
         quantification_array[position_index_dictionary[gene,position],sample_index_dictionary[sample]] = count
 
