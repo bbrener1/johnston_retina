@@ -53,4 +53,4 @@ print quantification_array
 
 
 np.savetxt("quantities.txt",quantification_array)
-np.savetxt("positions.txt", position_header)
+np.savetxt("positions.txt", position_header,fmt="%s")
