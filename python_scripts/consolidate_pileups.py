@@ -9,6 +9,8 @@ samples = map(lambda x: x.strip(),open(sys.argv[1]).readlines())
 days = map(lambda x: x.strip(), open(sys.argv[2]).readlines())
 paths = map(lambda x: x.strip() ,open(sys.argv[3]).readlines())
 
+prefix = sys.argv[6]
+
 days = map(lambda x: int(x),days)
 set_days = set(days)
 
@@ -55,13 +57,13 @@ print quantification_array.shape
 print len(samples)
 print len(sample_index_dictionary)
 
-np.savetxt("quantities.txt",quantification_array)
-np.savetxt("positions.txt", position_header,fmt="%s")
-np.savetxt("lw_mw_header.txt", lw_mw_header,fmt="%s")
-np.savetxt("sample_header.txt", np.array(samples),fmt="%s")
+np.savetxt(prefix + "quantities.txt",quantification_array)
+np.savetxt(prefix + "positions.txt", position_header,fmt="%s")
+np.savetxt(prefix + "lw_mw_header.txt", lw_mw_header,fmt="%s")
+np.savetxt(prefix + "sample_header.txt", np.array(samples),fmt="%s")
 
 day_sort = np.argsort(np.array(days))
 
-np.savetxt("quantities_sorted.txt", quantification_array.T[day_sort].T)
-np.savetxt("sample_header_sorted.txt", np.array(samples)[day_sort],fmt="%s")
-np.savetxt("day_header_sorted.txt", np.array(days)[day_sort],fmt="%s")
+np.savetxt(prefix + "quantities_sorted.txt", quantification_array.T[day_sort].T)
+np.savetxt(prefix + "sample_header_sorted.txt", np.array(samples)[day_sort],fmt="%s")
+np.savetxt(prefix + "day_header_sorted.txt", np.array(days)[day_sort],fmt="%s")
