@@ -2,6 +2,8 @@
 
 import sys
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 samples = map(lambda x: x.strip(),open(sys.argv[1]).readlines())
 days = map(lambda x: x.strip(), open(sys.argv[2]).readlines())
@@ -48,3 +50,7 @@ for sample,day,path in zip(samples,days,paths):
         quantification_array[position_index_dictionary[gene,position],sample_index_dictionary[sample]] = count
 
 print quantification_array
+
+
+np.savetxt("quantities.txt",quantification_array)
+np.savetxt("positions.txt", position_header)
