@@ -10,7 +10,7 @@ paths = (lambda x: x.strip(),open(sys.argv[2]).readlines())
 srr_gsm_key = map(lambda x: x.strip(), open(sys.argv[3]).readlines())
 gsm_key = map(lambda x: x.strip() ,open(sys.argv[4]).readlines())
 
-prefix = sys.argv[6]
+prefix = sys.argv[7]
 
 srr_gsm_key = {x.split()[0]:x.split()[1] for x in srr_gsm_key}
 
@@ -24,8 +24,8 @@ days = map(lambda x: sample_day_map[x], samples)
 
 print sample_day_map
 
-lw_positions = map(lambda x: x.split(),open(sys.argv[4]).readlines())
-mw_positions = map(lambda x: x.split(),open(sys.argv[5]).readlines())
+lw_positions = map(lambda x: x.split(),open(sys.argv[5]).readlines())
+mw_positions = map(lambda x: x.split(),open(sys.argv[6]).readlines())
 
 print lw_positions
 print mw_positions
