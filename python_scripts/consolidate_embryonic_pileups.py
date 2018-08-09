@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 samples = map(lambda x: x.strip(),open(sys.argv[1]).readlines())
-paths = (lambda x: x.strip(),open(sys.argv[2]).readlines())
+paths = map(lambda x: x.strip(),open(sys.argv[2]).readlines())
 srr_gsm_key = map(lambda x: x.strip(), open(sys.argv[3]).readlines())
 gsm_key = map(lambda x: x.strip() ,open(sys.argv[4]).readlines())
 
