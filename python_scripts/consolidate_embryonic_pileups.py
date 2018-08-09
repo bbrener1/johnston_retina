@@ -16,7 +16,7 @@ srr_gsm_key = {x.split()[0]:x.split()[1] for x in srr_gsm_key}
 
 gsm_key = {x.split()[0]:(x.split()[1],int(x.split()[2])) for x in gsm_key}
 
-sample_day_map = {x:gsm_key[x][1] for x in samples}
+sample_day_map = {x:gsm_key[srr_gsm_key[x]][1] for x in samples}
 
 sample_index_dictionary = {x:y for (x,y) in zip(samples,range(len(samples)))}
 
