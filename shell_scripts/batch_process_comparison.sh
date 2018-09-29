@@ -6,7 +6,7 @@
 #SBATCH --mem-per-cpu=5G
 #SBATCH -t 500
 
-for i in $(find ../../raw_data/human_embryonic/*.fastq -exec basename {} \;);
+for i in $(find ../../raw_data/raw_data/*.fastq -exec basename {} \;);
 # for i in $(cat ../sample_spec/he_samples.txt);
 do
 
