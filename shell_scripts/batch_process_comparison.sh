@@ -7,22 +7,23 @@
 #SBATCH -t 500
 
 # for i in $(find ../../raw_data/raw_data/*.fastq -exec basename {} \;);
+for i in $(find ../../raw_data/weri/*.fastq -exec basename {} \;);
 # for i in $(cat ../sample_spec/he_samples.txt);
-# do
-
+do
+  echo $i
   # bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ../../raw_data/raw_data/;
   # bash kallisto_quant.sh $i ../../quantification/comparison/kallisto ../../raw_data/raw_data/;
   # sbatch bash bowtie_stringtie_quant.sh $i ../../quantification/stringtie ../../raw_data/raw_data/;
-  # bash bowtie_stringtie_transcriptome_quant.sh $i ../../quantification/human_embryonic/bowtie_transcriptome/ ../../raw_data/human_embryonic/ &
+  bash bowtie_stringtie_transcriptome_quant.sh $i ../../quantification/weri/ ../../raw_data/weri/ 
 
-# done
+done
 
 
-i=$(find ../../raw_data/raw_data/*.fastq -printf '%f\n' | head -n $SLURM_ARRAY_TASK_ID | tail -n 1)
+# i=$(find ../../raw_data/raw_data/*.fastq -printf '%f\n' | head -n $SLURM_ARRAY_TASK_ID | tail -n 1)
 #
 # bash hisat_string_quant.sh $i ../../quantification/comparison/hisat ../../raw_data/;
 # # bash kallisto_quant.sh $i ../../quantification/comparison/kallisto ../../raw_data/;
-bash bowtie_stringtie_quant.sh $i ../../quantification/stringtie/ ../../raw_data/raw_data;
+# bash bowtie_stringtie_quant.sh $i ../../quantification/stringtie/ ../../raw_data/raw_data;
 # # bash bowtie_stringtie_quant.sh $i ../../quantification/comparison/bowtie_transcriptome ../../raw_data/;
 
 # 	if [ ! -d ../quantification/comparison/$i ]; then
