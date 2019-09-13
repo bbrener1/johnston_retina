@@ -9,7 +9,7 @@
 #source activate ../johnston_retina
 
 # bowtie2 --mp 9999,9998 -x ../gencode_transcriptome/gencode_bowtie_index -p 21 -U $3/$1 > $2/$1.strict.sam
-bowtie2 -x ../gencode_transcriptome/gencode_bowtie_index -p 5 -U $3/$1 > $2/$1.sam
+bowtie2 -x ../gencode_transcriptome/mini_bowtie_index -p 5 -U $3/$1 > $2/$1.sam
 # bowtie2 --mp 9999,9998 -x ../gencode_transcriptome/gencode_bowtie_index -p 21 -1 $3/$1_1.fastq -2 $3/$1_2.fastq > $2/$1.strict.sam
 # bowtie2 -x ../gencode_transcriptome/gencode_bowtie_index -p 21 -1 $3/$1_1.fastq -2 $3/$1_2.fastq > $2/$1.sam
 # samtools view -bS $2/$1.strict.sam > $2/$1.strict.bam
